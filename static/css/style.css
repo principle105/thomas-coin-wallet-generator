@@ -68,24 +68,6 @@ body {
     cursor: pointer;
 }
 
-.copied {
-    margin-left: 0.25rem;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    padding: 0.2em 0.4em;
-    position: absolute;
-    animation: fadeIn ease-in-out 500ms;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
 .so-far {
     font-size: 1rem;
 }

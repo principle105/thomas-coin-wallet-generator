@@ -1,87 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            rel="stylesheet"
-            href="{{ url_for('static', filename='css/style.css') }}"
-        />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for("static", filename="css/style.css") }}">
 
-        <link rel="icon" href="{{ url_for('static', filename='logo.png') }}" />
+  <link rel="icon" href="{{ url_for("static", filename="logo.png") }}">
 
-        <meta property="og:title" content="Thomas Coin Wallet Generator" />
-        <meta
-            property="og:description"
-            content="The best wallet generator for thomas coin; the final currency."
-        />
-        <meta name="theme-color" content="#ffa724" />
+  <meta property="og:title" content="Thomas Coin Wallet Generator" />
+  <meta property="og:description" content="The best wallet generator for thomas coin; the final currency." />
+  <meta name="theme-color" content="#ffa724">
 
-        <meta
-            property="og:image"
-            content="{{ url_for('static', filename='logo.png') }}"
-        />
+  <meta property="og:image" content="{{ url_for("static", filename="logo.png") }}" />
 
-        <title>Thomas Coin Wallet Generator</title>
-    </head>
-    <body>
-        <button id="dark-theme-btn">🌙</button>
-        <div class="container">
-            <div class="content">
-                <div class="so-far">
-                    <span class="bold">Wallets generated so far: </span>
-                    {{total}}
-                </div>
+  <title>Thomas Coin Wallet Generator</title>
+</head>
+<body>
+  <button id="dark-theme-btn">🌙</button>
+  <div class="container">
+    <div class="content">
 
-                <div class="options">
-                    <div class="option">
-                        <p class="bold">
-                            Public Key:
-                            <span onclick="copyToClipboard(this)"
-                                >{{public_key}}</span
-                            >
-                        </p>
-                    </div>
+      <div class="so-far">
+        <span class="bold">Wallets generated so far: </span> {{total}}
+      </div>
 
-                    <div class="option">
-                        <p class="bold">
-                            Private Key:
-                            <span onclick="copyToClipboard(this)"
-                                >{{private_key}}</span
-                            >
-                        </p>
-                    </div>
+      <div class="options">
 
-                    <div class="option">
-                        <p class="bold">
-                            Address:
-                            <span onclick="copyToClipboard(this)"
-                                >{{address}}</span
-                            >
-                        </p>
-                    </div>
-                </div>
-
-                <div>
-                    <button
-                        class="generate-btn"
-                        id="generate-btn"
-                        onClick="window.location.reload();"
-                    >
-                        Generate New Wallet
-                    </button>
-                </div>
-            </div>
+        <div class="option">
+          <p class="bold">Public Key: 
+            <span onclick="copyToClipboard(this)">{{public_key}}</span>
+          </p>
         </div>
-        <script
-            type="text/javascript"
-            src="{{ url_for('static', filename = 'script.js') }}"
-        ></script>
-    </body>
+
+        <div class="option">
+          <p class="bold">Private Key: 
+            <span onclick="copyToClipboard(this)">{{private_key}}</span>
+          </p>
+        </div>
+
+        <div class="option">
+          <p class="bold">Address: 
+            <span onclick="copyToClipboard(this)">{{address}}</span>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <button 
+        class="generate-btn" 
+        id="generate-btn" 
+        onClick="window.location.reload();">
+        Generate New Wallet
+      </button>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="{{ url_for("static", filename = "script.js") }}"></script>
+</body>
 </html>
