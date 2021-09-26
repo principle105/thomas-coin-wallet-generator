@@ -18,10 +18,11 @@ btn.onclick = () => {
 
 const copyToClipboard = (text) => {
   const original = text.innerHTML;
-  text.innerHTML += textToAdd;
 
   const cb = navigator.clipboard;
   cb.writeText(text.innerHTML);
+  
+  text.innerHTML += textToAdd;
 
   setTimeout(function () {
     text.innerHTML = original
